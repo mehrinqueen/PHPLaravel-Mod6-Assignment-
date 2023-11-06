@@ -1,0 +1,9 @@
+/*Retrieve the product name, quantity, and total amount for each order item. Display the result in ascending order of the order ID.*/
+SELECT
+    oi.order_id,
+    p.name AS product_name,
+    oi.quantity,
+    (oi.quantity * oi.unit_price) AS total_amount
+FROM Order_Items oi
+JOIN Products p ON oi.product_id = p.product_id
+ORDER BY oi.order_id ASC;
